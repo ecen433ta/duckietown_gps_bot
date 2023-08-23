@@ -13,6 +13,7 @@ dt-launchfile-init
 # NOTE: Use `dt-exec COMMAND` to run the main process (blocking process)
 
 # launching app
+dt-exec echo hello
 dt-exec python3 ./packages/cargps_container/lcm_sub_2_ros_pub.py
 # ----------------------------------------------------------------------------
 # YOUR CODE ABOVE THIS LINE
