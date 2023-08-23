@@ -1,7 +1,7 @@
 # parameters
-ARG REPO_NAME="<REPO_NAME_HERE>"
-ARG DESCRIPTION="<DESCRIPTION_HERE>"
-ARG MAINTAINER="<YOUR_FULL_NAME> (<YOUR_EMAIL_ADDRESS>)"
+ARG REPO_NAME="<cargps_container>"
+ARG DESCRIPTION="the container to get gps on the duckie cars"
+ARG MAINTAINER="Ethan Smith (esmit502@byu.edu)"
 # pick an icon from: https://fontawesome.com/v4.7.0/icons/
 ARG ICON="cube"
 
@@ -58,6 +58,8 @@ RUN echo PIP_INDEX_URL=${PIP_INDEX_URL}
 COPY ./dependencies-py3.* "${REPO_PATH}/"
 RUN python3 -m pip install  -r ${REPO_PATH}/dependencies-py3.txt
 
+#RUN python3 packages/cargps_container/lcm_sub_2_ros_pub.py
+
 # copy the source code
 COPY ./packages "${REPO_PATH}/packages"
 
@@ -70,6 +72,8 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
 COPY ./launchers/. "${LAUNCH_PATH}/"
 COPY ./launchers/default.sh "${LAUNCH_PATH}/"
 RUN dt-install-launchers "${LAUNCH_PATH}"
+
+#ENTRYPOINT ["python3","packages/cargps_container/lcm_sub_2_ros_pub.py"]
 
 # define default command
 CMD ["bash", "-c", "dt-launcher-${DT_LAUNCHER}"]
