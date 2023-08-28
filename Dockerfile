@@ -48,7 +48,7 @@ ENV DT_LAUNCH_PATH "${LAUNCH_PATH}"
 ENV DT_LAUNCHER "${LAUNCHER}"
 
 # Add your car number here
-ENV CAR_NUMBER=0.0
+ENV CAR_NUMBER=7.0
 
 # install apt dependencies
 COPY ./dependencies-apt.txt "${REPO_PATH}/"

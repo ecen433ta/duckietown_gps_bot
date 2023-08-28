@@ -13,3 +13,7 @@ This repo was based on the duckietown repo found [here](https://github.com/ducki
 
 Download this repository onto a computer that is able to communicate with the duckiebots over network and has the dt shell installed.
 
+### 2. Edit Dockerfile
+
+Open up the Dockerfile, and make changes to line 51. This variable needs to be set to match the number of Apriltag on your duckiebot. This number should be a float type. So if you have tag #1 on your Duckiebot, then the variable needs to be set as 1.0
+
