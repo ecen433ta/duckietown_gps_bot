@@ -17,3 +17,12 @@ Download this repository onto a computer that is able to communicate with the du
 
 Open up the Dockerfile, and make changes to line 51. This variable needs to be set to match the number of Apriltag on your duckiebot. This number should be a float type. So if you have tag #1 on your Duckiebot, then the variable needs to be set as 1.0
 
+### 3. Start the container
+
+First you will need to build the container by using ```dts devel build -f``` when in the top directory.
+
+Next, launch the container by simply using ```dts devel run -f```
+
+
+
+
