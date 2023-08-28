@@ -26,6 +26,3 @@ if __name__ == '__main__':
     node = Car_Publisher('car_coordinates_node')
     node.run()
 
-#start this node in the car with 
-# docker run -it -e CAR_NUMBER=7.0 --network host duckietown/car_container:v2-arm64v8 bash
-

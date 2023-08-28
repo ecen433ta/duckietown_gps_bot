@@ -21,7 +21,12 @@ Open up the Dockerfile, and make changes to line 51. This variable needs to be s
 
 First you will need to build the container by using ```dts devel build -f``` when in the top directory.
 
-Next, launch the container by simply using ```dts devel run -f```
+Next, launch the container by simply using ```dts devel run -f -H [HOSTNAME].local``` where HOSTNAME is the chosen name of the robot.
+
+### 4. Access the ROS messages
+
+The x,y coordinates of the Duckiebot will be published over the ROS topic named ```/car_coordinates```. 
+The message type is Float32 from the ROS std_msgs library.
 
 
 
