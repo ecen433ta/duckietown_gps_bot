@@ -1,10 +1,10 @@
-# Template: template-ros
+# Duckietown GPS Car Container
 
-This template provides a boilerplate repository
-for developing ROS-based software in Duckietown.
+This repo creates a docker container that is compatible with the Duckiebots provided by Duckietown. It is the recieving end of the gps system created for BYU's ECEN 433 class. 
 
-**NOTE:** If you want to develop software that does not use
-ROS, check out [this template](https://github.com/duckietown/template-basic).
+It uses LCM  through the dt-communications-utils library to recieve messages from the GPS system over wifi. Those messages are then sorted according to the car number set in the bot. X,Y coordinates are then published over ROS to the rest of the Duckiebot.
+
+This repo was based on the duckietown repo found [here](https://github.com/duckietown/template-ros).
 
 
 ## How to use it
