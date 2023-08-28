@@ -1,47 +1,15 @@
-# Template: template-ros
+# Duckietown GPS Car Container
 
-This template provides a boilerplate repository
-for developing ROS-based software in Duckietown.
+This repo creates a docker container that is compatible with the Duckiebots provided by Duckietown. It is the recieving end of the gps system created for BYU's ECEN 433 class. 
 
-**NOTE:** If you want to develop software that does not use
-ROS, check out [this template](https://github.com/duckietown/template-basic).
+It uses LCM  through the dt-communications-utils library to recieve messages from the GPS system over wifi. Those messages are then sorted according to the car number set in the bot. X,Y coordinates are then published over ROS to the rest of the Duckiebot.
+
+This repo was based on the duckietown repo found [here](https://github.com/duckietown/template-ros).
 
 
 ## How to use it
 
-### 1. Fork this repository
+### 1. Clone this repository
 
-Use the fork button in the top-right corner of the github page to fork this template repository.
+Download this repository onto a computer that is able to communicate with the duckiebots over network and has the dt shell installed.
 
-
-### 2. Create a new repository
-
-Create a new repository on github.com while
-specifying the newly forked template repository as
-a template for your new repository.
-
-
-### 3. Define dependencies
-
-List the dependencies in the files `dependencies-apt.txt` and
-`dependencies-py3.txt` (apt packages and pip packages respectively).
-
-
-### 4. Place your code
-
-Place your code in the directory `/packages/` of
-your new repository.
-
-
-### 5. Setup launchers
-
-The directory `/launchers` can contain as many launchers (launching scripts)
-as you want. A default launcher called `default.sh` must always be present.
-
-If you create an executable script (i.e., a file with a valid shebang statement)
-a launcher will be created for it. For example, the script file 
-`/launchers/my-launcher.sh` will be available inside the Docker image as the binary
-`dt-launcher-my-launcher`.
-
-When launching a new container, you can simply provide `dt-launcher-my-launcher` as
-command.
