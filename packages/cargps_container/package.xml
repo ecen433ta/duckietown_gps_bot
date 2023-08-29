@@ -1,0 +1,11 @@
+<package>
+  <name>cargps_container</name>
+  <version>0.1.0</version>
+  <description>
+  This package is for the duckietown cars to go recieve lcm messages from the GPS and publish them to ROS
+  </description>
+  <maintainer email="esmit502@byu.edu">YOUR_FULL_NAME</maintainer>
+  <license>None</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

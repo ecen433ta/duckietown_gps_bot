@@ -1,3 +1,0 @@
-dt-apriltags
-opencv-python-headless
-numpy

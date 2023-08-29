@@ -1,12 +1,11 @@
 # parameters
-ARG REPO_NAME="nuc_container"
-ARG DESCRIPTION="Container meant to get Duckiebot location data and sent and array of all car locations to any Duckiebot subscribed to the LCM group"
+ARG REPO_NAME="cargps_container"
+ARG DESCRIPTION="Container to recieve and distribute GPS locations to Duckiebots"
+
 ARG MAINTAINER="Ethan Smith (esmit502@byu.edu)"
 # pick an icon from: https://fontawesome.com/v4.7.0/icons/
 ARG ICON="cube"
 
-# ==================================================>
-# ==> Do not change the code below this line
 ARG ARCH=arm64v8
 ARG DISTRO=ente
 ARG BASE_TAG=${DISTRO}-${ARCH}
@@ -47,6 +46,9 @@ ENV DT_REPO_PATH "${REPO_PATH}"
 ENV DT_LAUNCH_PATH "${LAUNCH_PATH}"
 ENV DT_LAUNCHER "${LAUNCHER}"
 
+# Add your car number here
+ENV CAR_NUMBER=7.0
+
 # install apt dependencies
 COPY ./dependencies-apt.txt "${REPO_PATH}/"
 RUN dt-apt-install ${REPO_PATH}/dependencies-apt.txt
@@ -84,5 +86,3 @@ LABEL org.duckietown.label.module.type="${REPO_NAME}" \
     org.duckietown.label.base.image="${BASE_IMAGE}" \
     org.duckietown.label.base.tag="${BASE_TAG}" \
     org.duckietown.label.maintainer="${MAINTAINER}"
-# <== Do not change the code above this line
-# <==================================================
