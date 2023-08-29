@@ -27,7 +27,3 @@ Next, launch the container by simply using ```dts devel run -f -H [HOSTNAME].loc
 
 The x,y coordinates of the Duckiebot will be published over the ROS topic named ```/car_coordinates```. 
 The message type is Float32 from the ROS std_msgs library.
-
-
-
-
