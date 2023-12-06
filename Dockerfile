@@ -46,6 +46,8 @@ ENV DT_REPO_PATH "${REPO_PATH}"
 ENV DT_LAUNCH_PATH "${LAUNCH_PATH}"
 ENV DT_LAUNCHER "${LAUNCHER}"
 
+ENV CAR_NUMBER=0.0 # change this number to your tag id
+
 # install apt dependencies
 COPY ./dependencies-apt.txt "${REPO_PATH}/"
 RUN dt-apt-install ${REPO_PATH}/dependencies-apt.txt
